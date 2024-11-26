@@ -1,14 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\2024\\VacWorkFile\\scientific calculator\\",
+  "WorkspaceRootPath": "C:\\2024\\1_Vacation Work\\ScientificCalculator\\SciCalc\\scientific calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC7B09BB-4C36-41A4-8410-A77550A64DFD}|scientific calculator\\scientific calculator.csproj|c:\\2024\\vacworkfile\\scientific calculator\\scientific calculator\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CC7B09BB-4C36-41A4-8410-A77550A64DFD}|scientific calculator\\scientific calculator.csproj|solutionrelative:scientific calculator\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\2024\\VacWorkFile\\scientific calculator\\scientific calculator\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC7B09BB-4C36-41A4-8410-A77550A64DFD}|scientific calculator\\scientific calculator.csproj|C:\\2024\\VacWorkFile\\scientific calculator\\scientific calculator\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{CC7B09BB-4C36-41A4-8410-A77550A64DFD}|scientific calculator\\scientific calculator.csproj|solutionrelative:scientific calculator\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\2024\\1_Vacation Work\\ScientificCalculator\\SciCalc\\scientific calculator\\scientific calculator\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scientific calculator\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,21 +24,20 @@
               "DocumentIndex": 0,
               "Title": "index.html",
               "DocumentMoniker": "C:\\2024\\VacWorkFile\\scientific calculator\\scientific calculator\\index.html",
-              "RelativeDocumentMoniker": "scientific calculator\\index.html",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VacWorkFile\\scientific calculator\\scientific calculator\\index.html",
               "ToolTip": "C:\\2024\\VacWorkFile\\scientific calculator\\scientific calculator\\index.html",
-              "RelativeToolTip": "scientific calculator\\index.html",
+              "RelativeToolTip": "..\\..\\..\\..\\VacWorkFile\\scientific calculator\\scientific calculator\\index.html",
               "ViewState": "AQIAAFoAAAAAAAAAAAAAAGwAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-24T20:10:34.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-24T20:10:34.857Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "style.css",
-              "DocumentMoniker": "C:\\2024\\VacWorkFile\\scientific calculator\\scientific calculator\\style.css",
+              "DocumentMoniker": "C:\\2024\\1_Vacation Work\\ScientificCalculator\\SciCalc\\scientific calculator\\scientific calculator\\style.css",
               "RelativeDocumentMoniker": "scientific calculator\\style.css",
-              "ToolTip": "C:\\2024\\VacWorkFile\\scientific calculator\\scientific calculator\\style.css",
+              "ToolTip": "C:\\2024\\1_Vacation Work\\ScientificCalculator\\SciCalc\\scientific calculator\\scientific calculator\\style.css",
               "RelativeToolTip": "scientific calculator\\style.css",
               "ViewState": "AQIAAD8AAAAAAAAAAAAAAFsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -47,14 +45,22 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         },
         {
-          "DockedWidth": 94,
+          "DockedWidth": 545,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e9d26e9f-2060-4aa2-bec3-2a9e07c66900}"
