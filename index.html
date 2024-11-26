@@ -113,24 +113,106 @@
 
 
     <script type="text/javascript">
+        function tokenize(expression) {
+            const tokens = [];
+            let number = '';
+
+            for (let char of expression) {
+                if (/\d|\./.test(char)) {  // Check if the character is int / dot
+                    number += char;
+                } else {
+                    if (number) {
+                        tokens.push(number);
+                        number = '';
+                    }
+                    if (/\S/.test(char)) {  // Add operators & parentheses
+                        tokens.push(char);
+                    }
+                }
+            }
+            if (number) {
+                tokens.push(number);  // Push the last number if exists
+            }
+            return tokens;
+        }
+
+        // Evaluation with operator precedence
+        function evaluate(expression) {
+            const tokens = tokenize(expression);
+            const values = [];  // Stack for values
+            const operators = [];  // Stack for operators
+
+            const precedence = { '+': 1, '-': 1, '*': 2, '/': 2, '%': 2, '^': 3 };  // Operator precedence
+
+            function applyOperator() {
+                const operator = operators.pop();
+                const right = values.pop();
+                const left = values.pop();
+
+                switch (operator) {
+                    case '+': return left + right;
+                    case '-': return left - right;
+                    case '*': return left * right;
+                    case '/': return left / right;
+                    case '%': return left % right;
+                    case '^': return Math.pow(left, right);
+                }
+            }
+
+            for (let token of tokens) {
+                if (/\d/.test(token)) {
+                    values.push(parseFloat(token));  // If int, push to the values stack
+                } else if (token === '(') {
+                    operators.push(token);  // Push '(' to operators stack
+                } else if (token === ')') {
+                    while (operators[operators.length - 1] !== '(') {
+                        values.push(applyOperator());  // Process operators till '(' 
+                    }
+                    operators.pop();  // Pop '(' from stack
+                } else if (precedence[token]) {
+                    // Process operators w/ respect to precedence
+                    while (operators.length && precedence[operators[operators.length - 1]] >= precedence[token]) {
+                        values.push(applyOperator());
+                    }
+                    operators.push(token);
+                }
+            }
+
+            // Apply remaining operators
+            while (operators.length) {
+                values.push(applyOperator());
+            }
+
+            return values[0];  //  final result = only value left
+        }
+
         function calculate() {
             const screen = document.getElementById('screen');
-            let expression = screen.value; 
+            let expression = screen.value;
 
-         try { // replacing
+            try {
+                // Validate input to allow only numbers, operators, parentheses, and math functions
+                if (/^[\d+\-*/().\s%^e∛\w]+$/.test(expression)) {
+                    const result = evaluate(expression);  // Use the custom parser
+                    screen.value = result;
+        //function calculate() {
+        //    const screen = document.getElementById('screen');
+        //    let expression = screen.value; 
 
-             expression = expression.replace(/(\d)(\()/g, '$1*('); // add * between int and (
-             expression = expression.replace(/(\))(\d)/g, ')*$2');// add *  between int and )
-             expression = expression.replace(/(\))(\()/g, ')*(');  // add * between ( and )
-             expression = expression.replace(/\^/g, '**'); // replace ^ w/ **
-             expression = expression.replace(/∛(\d+(\.\d+)?|\-\d+(\.\d+)?)/g, 'Math.cbrt($1)'); // replace ∛ w/ Math.cbrt
-             expression = expression.replace(/(\d*\.?\d*)e(\-?\d+)/g, '$1*10**$2'); // replace e w/10**
+        // try { // replacing
+
+        //     expression = expression.replace(/(\d)(\()/g, '$1*('); // add * between int and (
+        //     expression = expression.replace(/(\))(\d)/g, ')*$2');// add *  between int and )
+        //     expression = expression.replace(/(\))(\()/g, ')*(');  // add * between ( and )
+        //     expression = expression.replace(/\^/g, '**'); // replace ^ w/ **
+        //     expression = expression.replace(/∛(\d+(\.\d+)?|\-\d+(\.\d+)?)/g, 'Math.cbrt($1)'); // replace ∛ w/ Math.cbrt
+        //     expression = expression.replace(/(\d*\.?\d*)e(\-?\d+)/g, '$1*10**$2'); // replace e w/10**
            
 
-        //        // Validate input to allow only numbers and operators
-             if (/^[\d+\-*/().\s%^e∛]+$/.test(expression)) {
-                 const result = new Function(`return ${expression}`)();
-                 screen.value = result;
+        ////        // Validate input to allow only numbers and operators
+        //     if (/^[\d+\-*/().\s%^e∛]+$/.test(expression)) {
+        //         const result = new Function(`return ${expression}`)();
+        //         screen.value = result;
                 } else {
                     alert('Invalid expression');
                 }
